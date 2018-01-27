@@ -35,6 +35,10 @@ Prometheus metrics are exported (default port 5000 /metrics).  Metrics are prefi
 
 Thorough documentation is [on the wiki](https://github.com/undeadops/speculator/wiki).
 
+### Example Prometheus Graph
+
+![alt text](screenshot/promGraphExample.png "Example of scaling in action")
+
 ### Contributing
 Check out [CONTRIBUTING.md](./CONTRIBUTING.md) for notes on making contributions.
 
