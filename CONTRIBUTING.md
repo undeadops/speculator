@@ -1,7 +1,5 @@
 # Contributing #
 
-Thanks for taking a look, its one of my first projects.
-
 First, if you have run into a bug, please file an issue. I will try to get back to
 issue reporters within a day or two.
 

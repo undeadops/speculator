@@ -16,11 +16,6 @@ folderol like HTTP methods and paths and JSON.
 
 Thorough documentation is [on the wiki](https://github.com/undeadops/speculator/wiki).
 
-### Releases
-Twirp follows semantic versioning through git tags, and uses Github Releases for
-release notes and upgrade guides:
-[Twirp Releases](https://github.com/twitchtv/twirp/releases)
-
 ### Contributing
 Check out [CONTRIBUTING.md](./CONTRIBUTING.md) for notes on making contributions.
 
