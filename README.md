@@ -7,10 +7,29 @@ on Kubernetes Pod CPU/Memory Request Percentages of the cluster.
 Default Ideal range is lower than typical solutions (40%-57%) because of the way
 Deis deploys on my cluster.  Range is modifyable via environment variables.
 
-Twirp is a framework for service-to-service communication emphasizing simplicity
-and minimalism. It generates routing and serialization from API definition files
-and lets you focus on your application's logic instead of thinking about
-folderol like HTTP methods and paths and JSON.
+### Building
+
+I still build and deploy this in deis (aka: git push) but basic binary should be
+buildable with a `go build -o speculator *.go`
+
+### Running
+
+Currently, its built to look at the Kubernetes internal API and will need a service 
+account.  I'm not using RBAC at the moment because of Deis as well. 
+
+It needs a few environment variables in order to run.  
+
+	ASGROUPNAME     - AWS AutoScaler Group Name 
+	AWSREGION       - AWS Region (default: us-east-1)
+	ENABLED         - TRUE|FALSE Enable scaling to take place (default: False) 
+	DISABLECOOLDOWN - TRUE|FALSE - Disable AWS ASG Cooldown timeout period 
+	CPUWATERMARK    - CPU Requests Watermark Percentage, When to scale down (default:"40")
+	CPUTHRESHOLD    - CPU Threshold Percentage, When to scale up (default:"56")
+    AWS_ACCESS_KEY  - AWS KEY with permissions to ASG 
+    AWS_SECRET_ACCESS_KEY - AWS KEY with permissions to ASG 
+
+Prometheus metrics are exported (default port 5000 /metrics).  Metrics are prefixed with `speculator`
+
 
 ### Documentation
 
