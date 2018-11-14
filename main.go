@@ -37,7 +37,6 @@ func setupLogging(
 // Configuration Details
 type settings struct {
 	ASGroupName     string `required:"true"`
-	AWSRegion       string `default:"us-east-1"`
 	Enabled         bool
 	DisableCoolDown bool
 	MemWatermark    int `default:"25"`

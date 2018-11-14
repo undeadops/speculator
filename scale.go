@@ -73,7 +73,6 @@ func getAutoScaleDesired() (int, int, int) {
 	if err != nil {
 		Warning.Panic("failed to load config, " + err.Error())
 	}
-	cfg.Region = Settings.AWSRegion
 
 	svc := autoscaling.New(cfg)
 	input := &autoscaling.DescribeAutoScalingGroupsInput{
@@ -99,6 +98,7 @@ func getAutoScaleDesired() (int, int, int) {
 			// Message from an error.
 			Warning.Println(err.Error())
 		}
+		return 0, 0, 0
 	}
 
 	for _, g := range result.AutoScalingGroups {
@@ -116,7 +116,6 @@ func scaleASG(desired int) {
 	if err != nil {
 		Warning.Panic("failed to load config, " + err.Error())
 	}
-	cfg.Region = Settings.AWSRegion
 
 	svc := autoscaling.New(cfg)
 
